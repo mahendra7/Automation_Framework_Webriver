@@ -6,10 +6,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import com.github.javafaker.Faker;
 import pageObjects.ChoosePlanPage;
 import pageObjects.ChooseSignMethodPage;
-import pageObjects.LandingPage;
+import pageObjects.HomePage;
 import pageObjects.SignUpPage;
 import pageObjects.eSignaturePage;
 import resources.base;
@@ -23,26 +25,23 @@ public class NewUserFreePlanTest extends base{
 	}
 	
 	@Test(dataProvider="getData")
-	public void landingPageTest(String singUpEmailId, String firstName, String lastName, String jobTitle, String companyName) throws IOException {
+	public void freePlanSingupTest(String singUpEmailId, String firstName, String lastName, String jobTitle, String companyName) throws IOException {
 		
 		driver.get(prop.getProperty("url"));
-		LandingPage landingpage = new LandingPage(driver);
-		landingpage.getSignUpLink().click();
+		HomePage homepage = new HomePage(driver);
+		homepage.getSignUpLink().click();
+		Assert.assertEquals(homepage.driver.getTitle().toString(), "Sign Up | HelloSign");
 		
 		SignUpPage singnuppage = new SignUpPage(driver);
 		singnuppage.getInputEmailAddress().sendKeys(singUpEmailId);
 		singnuppage.getCreateAccountButton().click();
-		
-		//String signUpEmailAddress = faker.internet().emailAddress();
-		System.out.println(singUpEmailId);
 		
 		ChoosePlanPage chooseplanpage = new ChoosePlanPage(driver);
 		chooseplanpage.getIndividualPlan().click();
 		chooseplanpage.getFreePlanLink().click();
 		
 		eSignaturePage signaturepage = new eSignaturePage(driver);
-		//String modal = signaturepage.getCollectionInfoModalHeader().getText();
-		//System.out.println("Modal Text: " + modal);
+		Assert.assertEquals(signaturepage.driver.findElement(By.className("subheader")).getText(), "This information helps us personalize your experience.");
 		signaturepage.getFirstNameField().sendKeys(firstName);
 		signaturepage.getLastNameField().sendKeys(lastName);
 		signaturepage.getJobTitleField().sendKeys(jobTitle);
@@ -78,8 +77,8 @@ public class NewUserFreePlanTest extends base{
 	public Object[][] getData() {
 		//Object[i][j] 
 		// i = number of times you want the test to run.
-		// j = number of different data values per run.
-		// so to run 2 times with 5 data value use Object[2][5].
+		// j = number of different data parameters for each run.
+		// so to run 2 times with 5 data parameters use Object[2][5].
 		
 		Object[][] data = new Object[2][5]; 
 
