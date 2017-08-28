@@ -1,0 +1,6 @@
+resources/base.class
+pageObjects/HomePage.class
+pageObjects/SignUpPage.class
+pageObjects/eSignaturePage.class
+hellosign/App.class
+pageObjects/ChoosePlanPage.class

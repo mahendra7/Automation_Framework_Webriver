@@ -5,7 +5,7 @@
     <classes>
       <class name="hellosign.NewUserFreePlanTest">
         <methods>
-          <include name="landingPageTest" invocation-numbers="0 1"/>
+          <include name="freePlanSingupTest" invocation-numbers="1"/>
           <include name="testSetup"/>
           <include name="teardown"/>
         </methods>
