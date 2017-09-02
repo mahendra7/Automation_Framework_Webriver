@@ -1,5 +1,6 @@
 package resources;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,15 +17,15 @@ public class base {
 
 	public WebDriver initializeDriver() throws IOException {
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream(
-				"/Users/mahendraramesh/Desktop/automation/src/main/java/resources/data.properties/");
+		FileInputStream fis = new FileInputStream(new File(System.getProperty("user.dir")+
+				"/src/main/java/resources/data.properties/"));
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "/Users/mahendraramesh/Desktop/automation/src/main/java/resources/geckodriver");
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/main/java/resources/geckodriver");
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/Users/mahendraramesh/Desktop/automation/src/main/java/resources/chromedriver");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/java/resources/chromedriver");
 			driver = new ChromeDriver();
 		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
