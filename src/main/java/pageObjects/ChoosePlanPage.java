@@ -11,7 +11,7 @@ public class ChoosePlanPage {
 		this.driver = driver;
 	}
 
-	By individualPlanIcon = By.xpath("//div[@class='level-name'][1]");
+	By individualPlanIcon = By.xpath("//div[@class='team-size-level'][1]");
 	By freePlanLink = By.cssSelector("a[href*='chooseFreeOrEnterpriseSignupPlan']");
 
 	public WebElement getIndividualPlan() {

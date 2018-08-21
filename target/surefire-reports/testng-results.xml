@@ -2,78 +2,78 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="32332" started-at="2017-09-02T00:28:17Z" finished-at="2017-09-02T00:28:49Z">
+  <suite name="Suite" duration-ms="36756" started-at="2018-08-21T05:54:46Z" finished-at="2018-08-21T05:55:23Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="32332" started-at="2017-09-02T00:28:17Z" finished-at="2017-09-02T00:28:49Z">
+    <test name="Test" duration-ms="36756" started-at="2018-08-21T05:54:46Z" finished-at="2018-08-21T05:55:23Z">
       <class name="hellosign.NewUserFreePlanTest">
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:hellosign.NewUserFreePlanTest@4909b8da]" name="testSetup" is-config="true" duration-ms="2667" started-at="2017-09-01T17:28:17Z" finished-at="2017-09-01T17:28:20Z">
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:hellosign.NewUserFreePlanTest@4cb2c100]" name="testSetup" is-config="true" duration-ms="2365" started-at="2018-08-20T22:54:46Z" finished-at="2018-08-20T22:54:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="freePlanSingupTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:hellosign.NewUserFreePlanTest@4909b8da]" name="freePlanSingupTest" duration-ms="18194" started-at="2017-09-01T17:28:20Z" data-provider="getData" finished-at="2017-09-01T17:28:38Z">
+        <test-method status="PASS" signature="freePlanSingupTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:hellosign.NewUserFreePlanTest@4cb2c100]" name="freePlanSingupTest" duration-ms="18828" started-at="2018-08-20T22:54:49Z" data-provider="getData" finished-at="2018-08-20T22:55:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Emile.Franecki@gmail.com]]>
+                <![CDATA[Jerrell.Orn@gmail.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Emile]]>
+                <![CDATA[Jerrell]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Franecki]]>
+                <![CDATA[Orn]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[web developer]]>
+                <![CDATA[physicist]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Braun-Braun]]>
+                <![CDATA[Konopelski, Konopelski and Konopelski]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- freePlanSingupTest -->
-        <test-method status="PASS" signature="freePlanSingupTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:hellosign.NewUserFreePlanTest@4909b8da]" name="freePlanSingupTest" duration-ms="11187" started-at="2017-09-01T17:28:38Z" data-provider="getData" finished-at="2017-09-01T17:28:49Z">
+        <test-method status="PASS" signature="freePlanSingupTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:hellosign.NewUserFreePlanTest@4cb2c100]" name="freePlanSingupTest" duration-ms="14200" started-at="2018-08-20T22:55:08Z" data-provider="getData" finished-at="2018-08-20T22:55:22Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Dylan.Dach@gmail.com]]>
+                <![CDATA[Bessie.Predovic@gmail.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Dylan]]>
+                <![CDATA[Bessie]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Dach]]>
+                <![CDATA[Predovic]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[attorney at law]]>
+                <![CDATA[philosopher]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Grady, Grady and Grady]]>
+                <![CDATA[Waelchi LLC]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- freePlanSingupTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hellosign.NewUserFreePlanTest@4909b8da]" name="teardown" is-config="true" duration-ms="97" started-at="2017-09-01T17:28:49Z" finished-at="2017-09-01T17:28:49Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hellosign.NewUserFreePlanTest@4cb2c100]" name="teardown" is-config="true" duration-ms="620" started-at="2018-08-20T22:55:22Z" finished-at="2018-08-20T22:55:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

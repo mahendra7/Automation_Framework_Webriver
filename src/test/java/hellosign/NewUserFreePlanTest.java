@@ -12,14 +12,46 @@ import pageObjects.HomePage;
 import pageObjects.SignUpPage;
 import pageObjects.eSignaturePage;
 import resources.base;
+import org.monte.screenrecorder.ScreenRecorder;
+import org.monte.media.math.Rational;
+import org.monte.media.Format;
+import org.monte.media.FormatKeys.MediaType;
+
+import static org.monte.media.AudioFormatKeys.*;
+import static org.monte.media.FormatKeys.EncodingKey;
+import static org.monte.media.FormatKeys.FrameRateKey;
+import static org.monte.media.FormatKeys.KeyFrameIntervalKey;
+import static org.monte.media.FormatKeys.MIME_AVI;
+import static org.monte.media.FormatKeys.MediaTypeKey;
+import static org.monte.media.FormatKeys.MimeTypeKey;
+import static org.monte.media.VideoFormatKeys.*;
+import java.awt.*;
+import java.io.File;
+import java.util.List;
+
 
 public class NewUserFreePlanTest extends base {
-
+	private static ScreenRecorder screenRecorder;
 	
 	@BeforeTest
-	public void testSetup() throws IOException {
+	public void testSetup() throws IOException, AWTException {
 		driver = initializeDriver();
 		driver.manage().window().maximize();
+		
+		// Create a instance of GraphicsConfiguration to get the Graphics configuration
+				// of the Screen. This is needed for ScreenRecorder class.
+				GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice()
+						.getDefaultConfiguration();
+
+				// Create a instance of ScreenRecorder with the required configurations
+				screenRecorder = new ScreenRecorder(gc, new Format(MediaTypeKey, MediaType.FILE, MimeTypeKey, MIME_AVI),
+						new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+								CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, DepthKey, (int) 24, FrameRateKey,
+								Rational.valueOf(15), QualityKey, 1.0f, KeyFrameIntervalKey, (int) (15 * 60)),
+						new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)),
+						null);
+
+				screenRecorder.start();
 	}
 
 	@Test(dataProvider = "getData")
@@ -54,9 +86,14 @@ public class NewUserFreePlanTest extends base {
 	}
 
 	@AfterTest
-	public void teardown() {
+	public void teardown() throws IOException {
 		driver.close();
 		driver = null;
+		screenRecorder.stop();
+		List<File> createdMovieFiles = screenRecorder.getCreatedMovieFiles();
+		for (File movie : createdMovieFiles) {
+			System.out.println("New movie created: " + movie.getAbsolutePath());
+		}
 	}
 	
 	@DataProvider

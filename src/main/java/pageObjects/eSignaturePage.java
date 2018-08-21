@@ -70,7 +70,7 @@ public class eSignaturePage {
 	
 	public void logout() {
 		Actions builder = new Actions(driver);
-		builder.moveToElement(driver.findElement(By.cssSelector("div[class='m-app-topbar--menu']"))).perform();
+		builder.moveToElement(driver.findElement(By.cssSelector("span[class='m-app-topbar--menu--title--icon']"))).perform();
 		builder.moveToElement(driver.findElement(By.linkText("Logout"))).click().perform();
 	}
 
