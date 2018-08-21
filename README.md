@@ -2,7 +2,7 @@
 Automation Testing Framework built with Webdriver, Maven, Testng, Java.
 
 This project will create two users on the site http://hellosign.com and register the two users for a free individual plan.
-This automation script runs on Firefox.
+This automation script runs on Chrome.
 
 Prerequisites: 
 1. Ensure JAVA_HOME environment variable is set and points to your JDK installation
